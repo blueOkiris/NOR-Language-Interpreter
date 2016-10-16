@@ -36,7 +36,7 @@
 	4100 NOR #4050:0, 0
 	4101 REM Check if dead
 		4102 NOR #4050:0, #4100:0
-		4103 MUX 4150, 4200
+		4103 MUX #4102:0, 4150, 4200
 	4150 JMP 150
 4200 REM Game over: print "D" in binary
 	4249 OLN
