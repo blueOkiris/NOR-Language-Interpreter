@@ -10,8 +10,8 @@
 	300 INP in3
 	
 301 REM Store value of lives, starting with lives = 11 (3)
-	302 NOR 0, #4100:0
-	303 NOR 0, #4050:0
+	302 NOR #4101:0, #4101:0
+	303 NOR #4051:0, #4051:0
 
 349 REM Check for in0 == 1 && #100 == 0
 	350 NOR in0, 0
@@ -33,11 +33,18 @@
 
 4000 REM Decrease lives and retake input
 	4050 NOR #303:1, 0
-	4100 NOR #4050:0, 0
-	4101 REM Check if dead
-		4102 NOR #4050:0, #4100:0
-		4103 MUX #4102:0, 4150, 4200
+	4051 NOR #4050:0, #4050:0
+	
+	4052 NOR #302:1, #302:1
+	4100 NOR #4052:0, #4050:0
+	4101 NOR #4100:0, #4100:0
+	
+	4102 REM Check if dead
+		4103 NOR #4100:1, #4050:1
+		4104 MUX #4103:0, 4150, 4200
+	
 	4150 JMP 150
+
 4200 REM Game over: print "D" in binary
 	4249 OLN
 	4250 OUT 0
@@ -48,8 +55,8 @@
 	4255 OUT 1
 	4256 OUT 0
 	4257 OUT 0
-	4300 INP in0
-	4350 OFF
+	4300 OLN
+	4350 JMP 2560
 
 650 REM Check for less than => in0 == 0 && #100 = 1
 	700 NOR #100:1, 0
@@ -113,5 +120,8 @@
 	2558 OUT 1
 	2559 OLN
 	2560 INP in0
-	2600 MUX in0, 2650, 99
+	2600 MUX in0, 2650, 2700
 2650 OFF
+
+2700 RST
+2750 JMP 99
