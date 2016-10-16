@@ -227,11 +227,16 @@ namespace NOR_Language
                                 }
 
                                 Random r = new Random();
-                                inputs[inputNum] = r.Next(1);
-                            } else
+                                inputs[inputNum] = r.Next(2);
+                            }
+                            else
                             {
                                 Random r = new Random();
-                                lineValues[line] = r.Next(1);
+                                int a = r.Next(2);
+                                if (!lineValues.Keys.Contains(line))
+                                    lineValues.Add(line, a);
+                                else
+                                    lineValues[line] = a;
                             }
                         }
                         break;
