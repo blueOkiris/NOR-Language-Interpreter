@@ -46,22 +46,25 @@ namespace NOR_Language
                 lines[i] = lines[i].ToUpper().Trim();
                 string[] tokens = lines[i].Split(new char[] { ' ', ',', '\t' }, StringSplitOptions.RemoveEmptyEntries);
 
-                int lineNumber = 0;
-                if (!int.TryParse(tokens[0], out lineNumber))
+                if (tokens.Length > 0)
                 {
-                    Console.Write("Error: No line number");
-                    Console.ReadLine();
-                    Environment.Exit(1);
-                }
+                    int lineNumber = 0;
+                    if (!int.TryParse(tokens[0], out lineNumber))
+                    {
+                        Console.Write("Error: No line number");
+                        Console.ReadLine();
+                        Environment.Exit(1);
+                    }
 
-                if (tokenLines.Keys.Contains(lineNumber))
-                {
-                    Console.Write("Error: Duplicate line number -> " + lineNumber);
-                    Console.ReadLine();
-                    Environment.Exit(2);
-                }
+                    if (tokenLines.Keys.Contains(lineNumber))
+                    {
+                        Console.Write("Error: Duplicate line number -> " + lineNumber);
+                        Console.ReadLine();
+                        Environment.Exit(2);
+                    }
 
-                tokenLines.Add(lineNumber, tokens);
+                    tokenLines.Add(lineNumber, tokens);
+                }
             }
 
             // If all goes well:

@@ -4,3 +4,9 @@ D:\Dylan OneDrive\OneDrive\Projects\NOR Language\NOR Language\bin\Debug\NOR Lang
 D:\Dylan OneDrive\OneDrive\Projects\NOR Language\NOR Language\obj\Debug\NOR Language.csprojResolveAssemblyReference.cache
 D:\Dylan OneDrive\OneDrive\Projects\NOR Language\NOR Language\obj\Debug\NOR Language.exe
 D:\Dylan OneDrive\OneDrive\Projects\NOR Language\NOR Language\obj\Debug\NOR Language.pdb
+D:\Dylan OneDrive\OneDrive\Projects\NOR-Language-Interpreter\NOR Language\NOR Language\bin\Debug\NOR Language.exe.config
+D:\Dylan OneDrive\OneDrive\Projects\NOR-Language-Interpreter\NOR Language\NOR Language\obj\Debug\NOR Language.exe
+D:\Dylan OneDrive\OneDrive\Projects\NOR-Language-Interpreter\NOR Language\NOR Language\obj\Debug\NOR Language.pdb
+D:\Dylan OneDrive\OneDrive\Projects\NOR-Language-Interpreter\NOR Language\NOR Language\bin\Debug\NOR Language.exe
+D:\Dylan OneDrive\OneDrive\Projects\NOR-Language-Interpreter\NOR Language\NOR Language\bin\Debug\NOR Language.pdb
+D:\Dylan OneDrive\OneDrive\Projects\NOR-Language-Interpreter\NOR Language\NOR Language\obj\Debug\NOR Language.csprojResolveAssemblyReference.cache
