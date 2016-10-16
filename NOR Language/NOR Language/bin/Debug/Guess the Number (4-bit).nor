@@ -1,0 +1,117 @@
+4
+99 REM Get 4 inputs and 4 random numbers
+	100 RND
+	101 RND
+	102 RND
+	103 RND
+	150 INP in0
+	200 INP in1
+	250 INP in2
+	300 INP in3
+	
+301 REM Store value of lives, starting with lives = 11 (3)
+	302 NOR 0, #4100:0
+	303 NOR 0, #4050:0
+
+349 REM Check for in0 == 1 && #100 == 0
+	350 NOR in0, 0
+	400 NOR #100:0, #350:0
+450 REM if #400 == 0, Move on, else Check for error
+	500 MUX #400:1, 650, 550
+550 REM Number is greater than #100: print "G" in binary
+	599 OLN
+	600 OUT 0
+	601 OUT 1
+	602 OUT 0
+	603 OUT 0
+	604 OUT 0
+	605 OUT 1
+	606 OUT 1
+	607 OUT 1
+	608 OLN
+	610 JMP 4000
+
+4000 REM Decrease lives and retake input
+	4050 NOR #303:1, 0
+	4100 NOR #4050:0, 0
+	4101 REM Check if dead
+		4102 NOR #4050:0, #4100:0
+		4103 MUX 4150, 4200
+	4150 JMP 150
+4200 REM Game over: print "D" in binary
+	4249 OLN
+	4250 OUT 0
+	4251 OUT 1
+	4252 OUT 0
+	4253 OUT 0
+	4254 OUT 0
+	4255 OUT 1
+	4256 OUT 0
+	4257 OUT 0
+	4300 INP in0
+	4350 OFF
+
+650 REM Check for less than => in0 == 0 && #100 = 1
+	700 NOR #100:1, 0
+	750 NOR #700:0, in0
+	800 MUX #750:1, 950, 850
+850 REM if input is less than #100: print "L" in binary
+	900 OLN
+	901 OUT 0
+	902 OUT 1
+	903 OUT 0
+	904 OUT 0
+	905 OUT 1
+	906 OUT 1
+	907 OUT 0
+	908 OUT 0
+	909 OLN
+	910 JMP 4000
+950 REM they must be equal, so repeat with next part of the nibble
+
+1000 REM Check for in0 == 1 && #100 == 0
+	1050 NOR in0, 0
+	1100 NOR #100:0, #350:0
+1150 REM if #400 == 0, Move on, else Check for error
+	1200 MUX #400:1, 1250, 550
+1250 REM Check for less than => in0 == 0 && #100 = 1
+	1300 NOR #100:1, 0
+	1350 NOR #700:0, in0
+	1400 MUX #750:1, 1450, 850
+1450 REM Next part is equal, so move on
+
+1500 REM Check for in0 == 1 && #100 == 0
+	1550 NOR in0, 0
+	1600 NOR #100:0, #350:0
+1650 REM if #400 == 0, Move on, else Check for error
+	1700 MUX #400:1, 1750, 550
+1750 REM Check for less than => in0 == 0 && #100 = 1
+	1800 NOR #100:1, 0
+	1850 NOR #700:0, in0
+	1900 MUX #750:1, 1950, 850
+1950 REM Next part is equal, so move on
+
+2000 REM Check for in0 == 1 && #100 == 0
+	2050 NOR in0, 0
+	2100 NOR #100:0, #350:0
+2150 REM if #400 == 0, Move on, else Check for error
+	2200 MUX #400:1, 2250, 550
+2250 REM Check for less than => in0 == 0 && #100 = 1
+	2300 NOR #100:1, 0
+	2350 NOR #700:0, in0
+	2400 MUX #750:1, 2450, 850
+2450 REM Last part is equal, you win
+2500 REM print W in binary
+	2550 OLN
+	2551 OUT 0
+	2552 OUT 1
+	2553 OUT 0
+	2554 OUT 1
+	2555 OUT 0
+	2556 OUT 1
+	2557 OUT 1
+	2558 OUT 1
+	2559 OLN
+	2560 INP in0
+	2600 MUX in0, 2650, 99
+2650 OFF
