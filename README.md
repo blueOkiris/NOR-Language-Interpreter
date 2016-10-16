@@ -6,7 +6,7 @@ It is an esoteric programming language that is purposely tedious to program in.
 Check out https://esolangs.org/wiki/NOR 
 
 ## What is NOR
-A programming language with 8 commands, but only one important command: NOR.
+A programming language with 9 commands, but only one important command: NOR.
 When you program this you think in terms of a circuit, and the only data is line numbers.
 
 ### Data Manipulation
