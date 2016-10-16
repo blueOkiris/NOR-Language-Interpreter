@@ -1,0 +1,6 @@
+0
+
+0 REM Infinite loop
+50 NOR #50:0, 0
+100 OUT #50:0
+200 JMP 50

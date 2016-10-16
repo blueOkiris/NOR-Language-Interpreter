@@ -1,0 +1,16 @@
+1
+0 REM Input a value
+10 INP in0
+
+20 REM Split the circuit into two paths:
+30 REM if 0, goto OUT 0 (Line 70)
+40 REM if 1, goto OUT 1 (Line 100 - the infinite loop)
+50 MUX in0, 70, 100
+
+60 REM Print 0 and then quit
+	70 OUT 0
+	80 OFF
+
+90 REM Print 1 indefinitely 
+	100 OUT 1
+	110 JMP 100
