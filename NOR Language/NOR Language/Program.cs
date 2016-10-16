@@ -227,12 +227,13 @@ namespace NOR_Language
                                 }
 
                                 Random r = new Random();
-                                inputs[inputNum] = r.Next(2);
+                                inputs[inputNum] = r.Next(0, 2);
                             }
                             else
                             {
                                 Random r = new Random();
-                                int a = r.Next(2);
+                                int a = r.Next(0, 2);
+
                                 if (!lineValues.Keys.Contains(line))
                                     lineValues.Add(line, a);
                                 else
