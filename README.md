@@ -54,6 +54,10 @@ Commas are optional, but they help to make the code look nice.
     LN MUX #, J1, J2 
     At line LN, if # is 0 go to line J1, and if # is 0 go to line J2. This is essentially a multiplexer.
 
+#### RST
+    LN RST
+	At line LN, reset all lie values to nonexistance
+
 Obviously the key opcode is the NOR opcode. Not only does it work as a NOR, but it can be used to represent some conditionals
 
 ## Example programs

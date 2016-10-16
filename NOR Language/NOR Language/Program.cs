@@ -36,6 +36,7 @@ namespace NOR_Language
             ops.Add("RND");
             ops.Add("MUX");
             ops.Add("OFF");
+            ops.Add("RST");
 
             string[] lines = File.ReadAllText(fileName).Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -474,6 +475,10 @@ namespace NOR_Language
 
                     case "OFF":
                         Environment.Exit(1);
+                        break;
+
+                    case "RST":
+                        lineValues = new Dictionary<int, int>();
                         break;
 
                     case "MUX":
