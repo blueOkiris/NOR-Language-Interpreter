@@ -6,7 +6,7 @@ It is an esoteric programming language that is purposely tedious to program in.
 Check out https://esolangs.org/wiki/NOR 
 
 ## What is NOR
-A programming language with 9 commands, but only one important command: NOR.
+A programming language with 10 commands, but only one important command: NOR.
 When you program this you think in terms of a circuit, and the only data is line numbers.
 
 ### Data Manipulation
@@ -23,7 +23,7 @@ Example to show Data Manipulation:
 "400 JMP 100" - Jumps back to 100, now with a value for line 300
 
 ## Op Codes
-NOR has 9 OpCodes: NOR, INP, OUT, OLN, JMP, REM, and RND, and it works much like basic, with line numbers.
+NOR has 10 OpCodes: NOR, INP, OUT, OLN, JMP, REM, RND, OFF, MUX, and RST, and it works much like basic, with line numbers.
 Commas are optional, but they help to make the code look nice.
 
 #### NOR
