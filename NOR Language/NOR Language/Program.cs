@@ -9,6 +9,9 @@ namespace NOR_Language
     {
         static void Main(string[] args)
         {
+            // Initialize Random here
+            Random rand = new Random();
+
             string fileName = "";
 
             if (args.Length > 0 && File.Exists(args[0]))
@@ -226,13 +229,11 @@ namespace NOR_Language
                                     Environment.Exit(12);
                                 }
 
-                                Random r = new Random();
-                                inputs[inputNum] = r.Next(0, 2);
+                                inputs[inputNum] = rand.Next(0, 2);
                             }
                             else
                             {
-                                Random r = new Random();
-                                int a = r.Next(0, 2);
+                                int a = rand.Next(0, 2);
 
                                 if (!lineValues.Keys.Contains(line))
                                     lineValues.Add(line, a);
