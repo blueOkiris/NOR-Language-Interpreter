@@ -4,9 +4,9 @@
 *.obj
 *.elf
 
-# Precompiled Headers
-*.gch
-*.pch
+*.manifest
+*.pdb
+*.exe.config
 
 # Libraries
 *.lib
